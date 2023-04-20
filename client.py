@@ -8,27 +8,10 @@ HEADER = 64
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-SERVER = "192.168.0.208"
+SERVER = "169.254.149.109"
 ADDR = (SERVER, PORT)
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect(ADDR)
-
-# class VideoSendThread(threading.Thread):
-#     def __init__(self):
-#         threading.Thread.__init__(self)
-#         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#         self.client.connect(ADDR)
-#         self.nonStopped = True
-#     def run(self):
-#         try:
-#             cap = cv2.VideoCapture(-1)
-#             while self.nonStopped:
-#                 _, frame = cap.read()
-#                 if _:
-#                     ret, img_encode = cv2.imencode('jpg', frame, cv2.IMWRITE_JPEG_QUALITY)
-#                     data_encode = np.array(img_encode)
-#                     stringData = data_encode.to_string()
-                    
 
 def receive_message():
     connected = True
@@ -46,7 +29,3 @@ newThread.start()
 threads.append(newThread)
 for t in threads:
     t.join()
-
-
-
-                
